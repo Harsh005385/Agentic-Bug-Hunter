@@ -1,0 +1,49 @@
+ID,Explanation,Context,Code,Correct Code
+BUG-001,Missing colon in if statement,Python conditional,"if x > 10
+    print(x)","if x > 10:
+    print(x)"
+BUG-002,Wrong equality operator,Python comparison,"if x = 5:
+    pass","if x == 5:
+    pass"
+BUG-003,Off by one loop error,Loop boundary,"for i in range(1,10): pass","for i in range(1,11): pass"
+BUG-004,Division by zero risk,Math operation,result = a / b,result = a / b if b != 0 else 0
+BUG-005,Mutable default argument,Function definition,"def add_item(item, lst=[]): lst.append(item)","def add_item(item, lst=None):
+    if lst is None: lst=[]
+    lst.append(item)"
+BUG-006,Incorrect list index,List access,value = arr[5],value = arr[4]
+BUG-007,Missing await,Async call,data = fetch_data(),data = await fetch_data()
+BUG-008,SQL injection risk,DB query,query = 'SELECT * FROM users WHERE id=' + user_id,query = 'SELECT * FROM users WHERE id=%s'
+BUG-009,Hardcoded secret,Security practice,API_KEY = '12345',API_KEY = os.getenv('API_KEY')
+BUG-010,Unused variable,Code cleanliness,"x=10
+y=20
+print(x)","x=10
+print(x)"
+BUG-011,Incorrect boolean logic,Condition logic,if a and b == True:,if a and b:
+BUG-012,Infinite loop,Loop control,"while True:
+    pass","while condition:
+    pass"
+BUG-013,Wrong file mode,File handling,"open('file.txt','r+')","open('file.txt','r')"
+BUG-014,Missing import,Dependency,json.loads(data),"import json
+json.loads(data)"
+BUG-015,String concatenation type error,Type mismatch,msg = 'Age:' + age,msg = 'Age:' + str(age)
+BUG-016,Improper exception catch,Error handling,except: pass,"except Exception as e:
+    print(e)"
+BUG-017,List instead of set for membership,Performance,if x in large_list: pass,"large_set=set(large_list)
+if x in large_set: pass"
+BUG-018,Wrong indentation,Python block,"for i in range(3):
+print(i)","for i in range(3):
+    print(i)"
+BUG-019,Missing return,Function output,"def add(a,b): c=a+b","def add(a,b): return a+b"
+BUG-020,Incorrect dict key,Dictionary access,value = d['namee'],value = d['name']
+BUG-021,Blocking call in async,Async performance,time.sleep(1),await asyncio.sleep(1)
+BUG-022,Shadowing built-in,Naming issue,"list = [1,2,3]","my_list = [1,2,3]"
+BUG-023,Floating comparison,Precision issue,if x == 0.1:,if abs(x-0.1) < 1e-9:
+BUG-024,Wrong operator precedence,Math logic,result = a + b * c + d,result = a + (b * (c + d))
+BUG-025,Not closing file,Resource leak,f=open('a.txt'); data=f.read(),"with open('a.txt') as f:
+    data=f.read()"
+BUG-026,Improper logging,Logging practice,print('error'),logger.error('error')
+BUG-027,Index out of range,Loop index,for i in range(len(a)+1): pass,for i in range(len(a)): pass
+BUG-028,Wrong sort usage,List sorting,sorted_list = list.sort(),sorted_list = sorted(list)
+BUG-029,Null check missing,Validation,name = user.name.upper(),name = user.name.upper() if user.name else ''
+BUG-030,Incorrect environment check,OS usage,if os == 'linux':,"import sys
+if sys.platform == 'linux':"

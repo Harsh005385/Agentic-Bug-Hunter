@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGENTIC_BUG_HUNTER</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AGENTIC_BUG_HUNTER</h1>
+      <p class="subtitle">Upload a CSV of code samples to detect bugs and generate explanations.</p>
+    </header>
+
+    <section class="upload-section">
+      <label for="csv-file" class="file-label">Select CSV file (id, code, optional correct)</label>
+      <input type="file" id="csv-file" accept=".csv" />
+      <button type="button" id="run-btn" disabled>Run analysis</button>
+    </section>
+
+    <div id="status" class="status" aria-live="polite"></div>
+    <div id="error" class="error" role="alert"></div>
+
+    <section class="results-section" id="results-section" hidden>
+      <h2>Results</h2>
+      <div class="results-meta">
+        <span id="results-count"></span>
+        <button type="button" id="download-btn">Download bug_report.csv</button>
+      </div>
+      <div class="table-wrap">
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Bug line</th>
+              <th>Explanation</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

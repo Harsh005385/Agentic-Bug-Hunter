@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "infineon-mcp-server"
+version = "0.1.0"
+description = "FastMCP server with LlamaIndex retrieval tools."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "fastmcp",
+  "llama-index",
+  "llama-index-embeddings-huggingface",
+  "huggingface-hub",
+  "transformers",
+  "onnxruntime",
+  "numpy",
+]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+infineon-mcp-server = "infineon_mcp_server.app:run"
+

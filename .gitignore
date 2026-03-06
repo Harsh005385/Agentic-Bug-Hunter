@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large model files
+server/embedding_model/
+server/storage/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# VSCode
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints

@@ -1,0 +1,8 @@
+fastmcp
+llama-index
+llama-index-embeddings-huggingface
+huggingface-hub
+transformers
+onnxruntime
+numpy
+

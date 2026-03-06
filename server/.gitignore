@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.env
+
+# Runtime/persisted data
+storage/
+
+# Large model artifacts / caches (keep local, don't commit)
+embedding_model/.cache/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+

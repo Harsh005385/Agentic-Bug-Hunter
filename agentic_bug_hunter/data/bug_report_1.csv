@@ -1,0 +1,21 @@
+id,bug_line,explanation
+16,1,Incorrect vecEditMode argument; should use TA::VTT instead of TA::VECD.
+32,2,"Incorrect voltage unit and pin name, and uses .burst() instead of .execute()"
+25,5,Premature RDI_END() terminates the RDI context before the I2C write is executed.
+10,2,Uses readHumanSeniority/getHumanSeniority instead of the correct readHumSensor/getHumSensor.
+26,10,"Using read() instead of execute() for the Pin2 waveform step, causing the intended command not to be executed."
+23,25,The call incorrectly targets `rdi.burstUpload.smartVec()`; it should invoke `rdi.smartVec().burstUpload().end()` to properly close the burst upload.
+4,3,"The `iClamp` call uses the limits in the wrong order (`iClamp(50 mA, -50 mA)`) which produces an invalid clamp range; it should be `iClamp(-50 mA, 50 mA)` as in the correct code."
+31,2,Calling a non‑existent method burst on a vector; should clear the vector instead.
+17,8,Should use getFFV instead of getFFC to retrieve the value.
+27,5,"Incorrect use of `imeas().write()` with wrong pin selection and missing `execute()`; should call `iMeas().execute()` on the proper pins (""DPS_1,DPS_2"") instead of `.imeas().write()` on (""DPS_0,DPS_1"")."
+24,3,"Incorrect pin identifier ""D0""; should be ""DO"" to correctly reference the desired channel."
+14,6,"Missing argument ""AVI"" in getAlarmValue call."
+9,3,"The line incorrectly calls `.end().end()` instead of the proper method chain `.node().end()`, leading to an extra `end()` call and wrong behavior."
+13,3,getVesjkctor is a typo in the method call; it should be getVector.
+22,3,Passing an unexpected argument 70 to readTempThresh when it takes no parameters.
+29,4,"retrievePmuxPinStatus is called before RDI_END, but it must be executed after ending the RDI session."
+2,3,"vForceRange value should be 30 V, not 35 V"
+20,1,"The argument should be true to enable the burst site upload; using false disables it, causing incorrect behavior."
+11,2,Wrong method name iMeans and incorrect unit mAh; should use iMeas and mA.
+3,4,Incorrect voltage setting (31 V) should be 30 V to match the default voltage.
